@@ -1,4 +1,11 @@
+//Dom builder:
 const weatherContainer = document.getElementById('weatherContainer');
+const weatherDiv = document.createElement('div');
+weatherDiv.id = "weatherDiv";
+const weatherStats = document.createElement('div');
+weatherStats.id = "weatherStats";
+const weatherLocation = document.createElement('div');
+weatherLocation.id = "weatherLocation";
 const temp = document.createElement('h3');
 const wind = document.createElement('h3');
 const humidity = document.createElement('h3');
@@ -6,7 +13,6 @@ const feel = document.createElement('h3');
 const icon = document.createElement('img');
 const condition = document.createElement('h3');
 const city = document.createElement('h2');
-// const cityName = document.getElementById("cityName").value;
 const region = document.createElement('h2');
 const country = document.createElement('h2');
 
@@ -22,16 +28,21 @@ const buildDom = (dom) => {
     city.innerText = `City: ${dom.city}`;
     region.innerText = `Region: ${dom.region}`;
     country.innerText = `Country: ${dom.country}`;
-
-    weatherContainer.appendChild(city);
-    weatherContainer.appendChild(region);
-    weatherContainer.appendChild(country);
-    weatherContainer.appendChild(temp);
-    weatherContainer.appendChild(icon);
-    weatherContainer. appendChild(condition);
-    weatherContainer. appendChild(wind);
-    weatherContainer. appendChild(humidity);
-    weatherContainer. appendChild(feel);
+    //create divs to hold weather information 
+    weatherContainer.appendChild(weatherDiv);
+    weatherDiv.appendChild(weatherLocation);
+    weatherDiv.appendChild(weatherStats)
+    //Create elements for weather location div
+    weatherLocation.appendChild(city);
+    weatherLocation.appendChild(region);
+    weatherLocation.appendChild(country);
+    //Create elements to hold weather stats 
+    weatherStats.appendChild(temp);
+    weatherStats.appendChild(wind);
+    weatherStats.appendChild(humidity);
+    weatherStats.appendChild(feel);
+    weatherStats.appendChild(condition);
+    weatherStats.appendChild(icon);
 }
 
 

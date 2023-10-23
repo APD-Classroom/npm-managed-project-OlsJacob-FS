@@ -5,5 +5,4 @@ import { weatherApi } from "./weatherBuild.js";
 
 (() => {
     weatherApi();
-  
 })();

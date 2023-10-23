@@ -2,7 +2,6 @@ import { API_WEATHER_KEY } from "./apiKey.js";
 import { buildDom } from "./domBuilder.js";
 //Build weather table data::
 
-
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
@@ -21,7 +20,7 @@ const weatherApi = (api) => {
     const region = weatherLocation.region;
     const city = weatherLocation.name;
     const country = weatherLocation.country;
-    
+    //weather Object
     const weatherStats = {
         temp,
         wind,
