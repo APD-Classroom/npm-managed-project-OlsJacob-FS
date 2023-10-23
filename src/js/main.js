@@ -1,8 +1,8 @@
 import { mapboxgl } from "./mapbox.js";
-import { buttonValue } from "./weatherBuild.js";
+import { onClick } from "./weatherBuild.js";
 
 
 
 (() => {
-    buttonValue();
+    onClick();
 })();

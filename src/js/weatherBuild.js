@@ -39,18 +39,22 @@ const weatherApi = (api) => {
 handleError = (err) => {
     console.error(err)
 }
-const buttonValue = () => {
-event.preventDefault();
-let location = document.getElementById("cityName").value;
-fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
-.then(res => res.json())
-.then(json => weatherApi(json))
-.catch(error => handleError(error))
+//On click method to update the weather data pr city the user enters
+const onClick = (e) => {
+    //e.preventDefault();
+    let location = document.getElementById("cityName").value;
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
+    .then(res => res.json())
+    .then(json => weatherApi(json))
+    .catch(error => handleError(error))
 }
+//Inital API call to display weather data
 fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
-.then(res => res.json())
-.then(json => weatherApi(json))
-.catch(error => handleError(error))
-document.querySelector("#btn").addEventListener("click", buttonValue);
+    .then(res => res.json())
+    .then(json => weatherApi(json))
+    .catch(error => handleError(error))
 
-export{buttonValue}
+document.querySelector("#btn").addEventListener("click",  onClick);
+
+
+export{onClick}
