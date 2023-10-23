@@ -2,7 +2,7 @@ import { API_WEATHER_KEY } from "./apiKey.js";
 import { buildDom } from "./domBuilder.js";
 //Build weather table data::
 
-
+let location = 'new york';
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
@@ -41,12 +41,16 @@ handleError = (err) => {
 }
 const buttonValue = () => {
 event.preventDefault();
-const location = document.getElementById("cityName").value;
-fetch(`http://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
+let location = document.getElementById("cityName").value;
+fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
 .then(res => res.json())
 .then(json => weatherApi(json))
 .catch(error => handleError(error))
 }
+fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
+.then(res => res.json())
+.then(json => weatherApi(json))
+.catch(error => handleError(error))
 document.querySelector("#btn").addEventListener("click", buttonValue);
 
 export{buttonValue}
