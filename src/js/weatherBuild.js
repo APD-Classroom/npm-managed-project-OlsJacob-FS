@@ -49,4 +49,4 @@ fetch(`http://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${loca
 }
 document.querySelector("#btn").addEventListener("click", buttonValue);
 
-export{weatherApi}
+export{buttonValue}
