@@ -13,15 +13,15 @@ const country = document.createElement('h2');
 
 
 const buildDom = (dom) => {
-    temp.innerText = dom.temp;
-    wind.innerText = dom.wind;
-    humidity.innerText = dom.humidity;
-    feel.innerText = dom.tempFeel;
+    temp.innerText = `Current Tempature: ${dom.temp} 'F`;
+    wind.innerText = `Wind Speed: ${dom.wind} mph`;
+    humidity.innerText = `Humidity: ${dom.humidity}`;
+    feel.innerText = `Feels Like: ${dom.tempFeel} 'F`;
     icon.src = dom.weatherIcon;
-    condition.innerText = dom.condition;
-    //city.innerText = cityName;
-    region.innerText = dom.region;
-    country.innerText = dom.country;
+    condition.innerText = `Weather Condition: ${dom.condition}`;
+    city.innerText = `City: ${dom.city}`;
+    region.innerText = `Region: ${dom.region}`;
+    country.innerText = `Country: ${dom.country}`;
 
     weatherContainer.appendChild(city);
     weatherContainer.appendChild(region);
