@@ -1,6 +1,8 @@
 import { API_WEATHER_KEY } from "./apiKey.js";
+import { buildDom } from "./domBuilder.js";
 //Build weather table data::
-const location = "cleveland";
+
+
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
@@ -13,15 +15,14 @@ const weatherApi = (api) => {
     const weatherConditions = weatherMetrics.condition;
     const weatherIcon = weatherConditions.icon;
     const condition = weatherConditions.text;
-    console.log()
+    console.log(api)
     //weather Location:
     const weatherLocation = api.location;
     const region = weatherLocation.region;
     const city = weatherLocation.name;
     const country = weatherLocation.country;
     
-
-    weatherStats = {
+    const weatherStats = {
         temp,
         wind,
         humidity,
@@ -32,14 +33,20 @@ const weatherApi = (api) => {
         city,
         country
     }
+    buildDom(weatherStats);
 }
+console.log(location)
 handleError = (err) => {
     console.error(err)
 }
+const buttonValue = () => {
+event.preventDefault();
+const location = document.getElementById("cityName").value;
 fetch(`http://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
 .then(res => res.json())
 .then(json => weatherApi(json))
 .catch(error => handleError(error))
+}
+document.querySelector("#btn").addEventListener("click", buttonValue);
 
-
-export{weatherApi, weatherStats}
+export{weatherApi}

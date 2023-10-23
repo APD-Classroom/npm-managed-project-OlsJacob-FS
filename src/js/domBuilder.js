@@ -1,30 +1,40 @@
-import { weatherStats } from "./weatherBuild.js";
-
 const weatherContainer = document.getElementById('weatherContainer');
-const weatherTemp = document.createElement('h3');
-const weatherWind = document.createElement('h3');
-const weatherHumidity = document.createElement('h3');
-const weatherFeel = document.createElement('h3');
-const weatherIcon = document.createElement('img');
-const weatherCondition = document.createElement('h3');
+const temp = document.createElement('h3');
+const wind = document.createElement('h3');
+const humidity = document.createElement('h3');
+const feel = document.createElement('h3');
+const icon = document.createElement('img');
+const condition = document.createElement('h3');
+const city = document.createElement('h2');
+// const cityName = document.getElementById("cityName").value;
+const region = document.createElement('h2');
+const country = document.createElement('h2');
+
+
 
 const buildDom = (dom) => {
-    
+    temp.innerText = dom.temp;
+    wind.innerText = dom.wind;
+    humidity.innerText = dom.humidity;
+    feel.innerText = dom.tempFeel;
+    icon.src = dom.weatherIcon;
+    condition.innerText = dom.condition;
+    //city.innerText = cityName;
+    region.innerText = dom.region;
+    country.innerText = dom.country;
+
+    weatherContainer.appendChild(city);
+    weatherContainer.appendChild(region);
+    weatherContainer.appendChild(country);
+    weatherContainer.appendChild(temp);
+    weatherContainer.appendChild(icon);
+    weatherContainer. appendChild(condition);
+    weatherContainer. appendChild(wind);
+    weatherContainer. appendChild(humidity);
+    weatherContainer. appendChild(feel);
 }
 
 
+export{buildDom}
 
 
-
-
-
-/*
-
- temp,
-        wind,
-        humidity,
-        tempFeel,
-        weatherIcon,
-        condition
-
-*/
