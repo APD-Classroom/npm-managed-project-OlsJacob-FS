@@ -2,7 +2,7 @@ import { API_WEATHER_KEY } from "./apiKey.js";
 import { buildDom } from "./domBuilder.js";
 //Build weather table data::
 
-const API_WEATHER_KEY = process.env.NODE_ENV === 'production' ? process.env.API_WEATHER_KEY : "broke";
+
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
