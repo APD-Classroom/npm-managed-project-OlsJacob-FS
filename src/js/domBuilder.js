@@ -19,10 +19,10 @@ const country = document.createElement('h2');
 
 
 const buildDom = (dom) => {
-    temp.innerText = `Current Tempature: ${dom.temp} 'F`;
+    temp.innerText = `Current Tempature: ${dom.temp}'F`;
     wind.innerText = `Wind Speed: ${dom.wind} mph`;
-    humidity.innerText = `Humidity: ${dom.humidity}`;
-    feel.innerText = `Feels Like: ${dom.tempFeel} 'F`;
+    humidity.innerText = `Humidity: ${dom.humidity}%`;
+    feel.innerText = `Feels Like: ${dom.tempFeel}'F`;
     icon.src = dom.weatherIcon;
     condition.innerText = `Weather Condition: ${dom.condition}`;
     city.innerText = `City: ${dom.city}`;
