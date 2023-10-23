@@ -1,4 +1,4 @@
-//import { API_WEATHER_KEY } from "./apiKey.js";
+import { API_WEATHER_KEY } from "./apiKey.js";
 import { buildDom } from "./domBuilder.js";
 //Build weather table data::
 
@@ -15,7 +15,7 @@ const weatherApi = (api) => {
     const weatherConditions = weatherMetrics.condition;
     const weatherIcon = weatherConditions.icon;
     const condition = weatherConditions.text;
-    console.log(api)
+   
     //weather Location:
     const weatherLocation = api.location;
     const region = weatherLocation.region;
@@ -35,7 +35,7 @@ const weatherApi = (api) => {
     }
     buildDom(weatherStats);
 }
-console.log(location)
+
 handleError = (err) => {
     console.error(err)
 }
