@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Playpen Sans', cursive;
+}
 section{
     margin: 20px;
     width: 1000px;

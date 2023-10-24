@@ -1,8 +1,9 @@
 import { API_WEATHER_KEY } from "./apiKey.js";
 import { buildDom } from "./domBuilder.js";
+import { startingCity } from "./mapbox.js";
 //Build weather table data::
 
-let location = 'new york';
+let location = startingCity;
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
@@ -41,7 +42,7 @@ handleError = (err) => {
 }
 //On click method to update the weather data pr city the user enters
 const onClick = (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     let location = document.getElementById("cityName").value;
     fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
     .then(res => res.json())
