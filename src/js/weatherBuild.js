@@ -3,7 +3,7 @@ import { buildDom } from "./domBuilder.js";
 import { startingCity } from "./mapbox.js";
 //Build weather table data::
 
-let location = startingCity;
+let location = "new york";
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
@@ -42,7 +42,7 @@ handleError = (err) => {
 }
 //On click method to update the weather data pr city the user enters
 const onClick = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     let location = document.getElementById("cityName").value;
     fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
     .then(res => res.json())
@@ -50,12 +50,15 @@ const onClick = (e) => {
     .catch(error => handleError(error))
 }
 //Inital API call to display weather data
-fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
+const intialCall = () => {
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${API_WEATHER_KEY}&q=${location}&aqi=no`)
     .then(res => res.json())
     .then(json => weatherApi(json))
     .catch(error => handleError(error))
+}
+
 
 document.querySelector("#btn").addEventListener("click",  onClick);
 
 
-export{onClick}
+export{onClick, intialCall}

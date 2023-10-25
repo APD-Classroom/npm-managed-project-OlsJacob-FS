@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
     // const lon = faker.location.longitude();
     const startingCity = faker.location.city()
     const mapboxgl = require('mapbox-gl');
-    
+    console.log(startingCity);
     mapboxgl.accessToken = 'pk.eyJ1Ijoib2xzamFjb2IiLCJhIjoiY2xueHhsa2RlMDF3djJscDlvdWhlMXlzcSJ9.0z6r7RcwHZnOftOTfOIiSg';
     const map = new mapboxgl.Map({
     container: 'mapContainer', // container ID

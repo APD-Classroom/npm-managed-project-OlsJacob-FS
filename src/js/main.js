@@ -1,9 +1,9 @@
 import { mapboxgl } from "./mapbox.js";
-import { onClick} from "./weatherBuild.js";
+import {  intialCall} from "./weatherBuild.js";
 
 
 
 (() => {
-    onClick();
+    intialCall();
     
 })();
