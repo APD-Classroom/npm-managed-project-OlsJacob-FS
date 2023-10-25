@@ -17,9 +17,9 @@ section{
 
     label {@apply mr-5 text-lg font-semibold}
 
-    section{@apply flex flex-col place-content-center mx-auto bg-gradient-to-r from-cyan-500 to-blue-500}
+    section{@apply flex flex-col place-content-center mx-auto bg-gradient-to-r from-cyan-200 to-blue-500}
 
-    div{ @apply text-white justify-self-center border-4 border-cyan-400 rounded-lg }
+    div{ @apply text-white justify-self-center border-2 border-cyan-400 rounded-lg }
  
     h1{ @apply text-2xl font-bold my-10}
 

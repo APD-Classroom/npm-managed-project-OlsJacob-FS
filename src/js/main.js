@@ -5,5 +5,4 @@ import {  intialCall} from "./weatherBuild.js";
 
 (() => {
     intialCall();
-    
 })();

@@ -1,9 +1,9 @@
 import { API_WEATHER_KEY } from "./apiKey.js";
 import { buildDom } from "./domBuilder.js";
-import { startingCity } from "./mapbox.js";
-//Build weather table data::
 
-let location = "new york";
+//Starting city weather data
+let location = "new york"
+//Build weather table data::
 const weatherApi = (api) => {
     //Weather Metrics:
     const weatherMetrics = api.current;
@@ -35,6 +35,7 @@ const weatherApi = (api) => {
         country
     }
     buildDom(weatherStats);
+  
 }
 
 handleError = (err) => {
